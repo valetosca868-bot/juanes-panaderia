@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -33,9 +33,6 @@
                     <a href="https://www.instagram.com/juanes.uy" target="_blank" class="social-link">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com/juanes.uy" target="_blank" class="social-link">
-                        <i class="fab fa-facebook"></i>
-                    </a>
                     <a href="https://wa.me/59891505818" target="_blank" class="social-link">
                         <i class="fab fa-whatsapp"></i>
                     </a>
@@ -52,7 +49,6 @@
         <div class="hero-image"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-badge">Desde 1998</span>
             <h1 class="hero-title">Juanes</h1>
             <p class="hero-subtitle">Hacemos la galleta de campaña más rica del mundo</p>
             <div class="hero-buttons">
@@ -94,7 +90,45 @@
             </div>
         </div>
     </section>
-<!-- Galleta de Campaña - Galería Inmersiva -->    <section class="galleta-showcase">        <div class="galleta-header" data-aos="fade-up">            <span class="tag">Nuestra Especialidad</span>            <h2>La Auténtica <span>Galleta de Campaña</span></h2>            <p>La auténtica tradición panadera uruguaya en cada bocado. Nuestras galletas de campaña se elaboran a mano todos los días, siguiendo la receta que pasó de generación en generación. Sabor real, trabajo artesanal y calidad que se siente.</p>        </div>        <div class="galleta-masonry">            <div class="galleta-item" data-aos="fade-up"><img src="galleta/galleta de campaña 1.jpg" alt="Galleta"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Galleta Artesanal</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/preparacion galleta 1.jpg" alt="Prep"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Masa Fresca</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/preparacion galleta 2.jpg" alt="Prep"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Amasado</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/galleta de campaña 2.jpg" alt="Galleta"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Recién Horneada</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/preparacion galleta 3.jpg" alt="Prep"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Formado</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/galleta de campaña 3.jpg" alt="Galleta"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Textura Perfecta</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/preparacion galleta 4.jpg" alt="Prep"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Al Horno</span></div></div>            <div class="galleta-item" data-aos="fade-up"><img src="galleta/galleta de campaña 4.jpg" alt="Galleta"><div class="zoom-icon"><i class="fas fa-expand"></i></div><div class="item-label"><span>Lista para Disfrutar</span></div></div>        </div>        <div class="galleta-features-strip" data-aos="fade-up">            <div class="feature-box"><i class="fas fa-scroll"></i><span>Receta Tradicional</span></div>            <div class="feature-box"><i class="fas fa-leaf"></i><span>100% Natural</span></div>            <div class="feature-box"><i class="fas fa-heart"></i><span>Hecha con Amor</span></div>            <div class="feature-box"><i class="fas fa-award"></i><span>Desde 1998</span></div>        </div>        <div class="galleta-cta-section" data-aos="fade-up">            <a href="#ubicacion" class="galleta-cta-btn"><span>Probala Ahora</span><i class="fas fa-arrow-right"></i></a>        </div>    </section>
+<!-- Galleta de Campaña - Carrusel Moderno -->
+    <section class="galleta-showcase">
+        <div class="galleta-header" data-aos="fade-up">
+            <span class="tag">Nuestra Especialidad</span>
+            <h2>La Auténtica <span>Galleta de Campaña</span></h2>
+            <p>La auténtica tradición panadera uruguaya en cada bocado. Nuestras galletas de campaña se elaboran a mano todos los días, siguiendo la receta que pasó de generación en generación. Sabor real, trabajo artesanal y calidad que se siente.</p>
+        </div>
+
+        <div class="galleta-carousel" data-aos="fade-up">
+            <button class="carousel-nav carousel-prev"><i class="fas fa-chevron-left"></i></button>
+
+            <div class="carousel-container">
+                <div class="carousel-slide carousel-prev-slide">
+                    <img src="" alt="Anterior">
+                </div>
+                <div class="carousel-slide carousel-main-slide">
+                    <img src="" alt="Principal">
+                    <div class="carousel-label"><span></span></div>
+                </div>
+                <div class="carousel-slide carousel-next-slide">
+                    <img src="" alt="Siguiente">
+                </div>
+            </div>
+
+            <button class="carousel-nav carousel-next"><i class="fas fa-chevron-right"></i></button>
+
+            <div class="carousel-dots"></div>
+
+            <div class="carousel-data" style="display:none;">
+                <div data-src="galleta/galleta de campaña 1.jpg" data-label="Galleta Artesanal"></div>
+                <div data-src="galleta/preparacion galleta 1.jpg" data-label="Masa Fresca"></div>
+                <div data-src="galleta/preparacion galleta 2.jpg" data-label="Amasado"></div>
+                <div data-src="galleta/galleta de campaña 2.jpg" data-label="Recién Horneada"></div>
+                <div data-src="galleta/preparacion galleta 3.jpg" data-label="Formado"></div>
+                <div data-src="galleta/galleta de campaña 3.jpg" data-label="Textura Perfecta"></div>
+                <div data-src="galleta/preparacion galleta 4.jpg" data-label="Al Horno"></div>
+                <div data-src="galleta/galleta de campaña 4.jpg" data-label="Lista para Disfrutar"></div>
+            </div>
+        </div>        <div class="galleta-features-strip" data-aos="fade-up">            <div class="feature-box"><i class="fas fa-scroll"></i><span>Receta Tradicional</span></div>            <div class="feature-box"><i class="fas fa-leaf"></i><span>100% Natural</span></div>            <div class="feature-box"><i class="fas fa-heart"></i><span>Hecha con Amor</span></div>        </div>        <div class="galleta-cta-section" data-aos="fade-up">            <a href="#ubicacion" class="galleta-cta-btn"><span>Probala Ahora</span><i class="fas fa-arrow-right"></i></a>        </div>    </section>
 
     <!-- Productos Destacados -->
     <section id="productos" class="productos">
@@ -132,24 +166,34 @@
                 <span class="section-subtitle">Todos los días</span>
                 <h2 class="section-title">Menús Diarios</h2>
             </div>
-            <div class="menus-gallery">
-                <div class="menu-foto">
-                    <img src="menu1.jpg" alt="Plato con ensalada">
+
+            <div class="generic-carousel" data-aos="fade-up" id="menus-carousel">
+                <button class="carousel-nav carousel-prev"><i class="fas fa-chevron-left"></i></button>
+
+                <div class="carousel-container">
+                    <div class="carousel-slide carousel-prev-slide">
+                        <img src="" alt="Anterior">
+                    </div>
+                    <div class="carousel-slide carousel-main-slide">
+                        <img src="" alt="Principal">
+                        <div class="carousel-label"><span></span></div>
+                    </div>
+                    <div class="carousel-slide carousel-next-slide">
+                        <img src="" alt="Siguiente">
+                    </div>
                 </div>
-                <div class="menu-foto">
-                    <img src="menu2.jpg" alt="Wrap con papas fritas">
-                </div>
-                <div class="menu-foto">
-                    <img src="menu3.jpg" alt="Milanesa napolitana">
-                </div>
-                <div class="menu-foto">
-                    <img src="reemplazarmenu.jpg" alt="Milanesa con huevo">
-                </div>
-                <div class="menu-foto">
-                    <img src="menu5.jpg" alt="Bowl de salmón">
-                </div>
-                <div class="menu-foto">
-                    <img src="menu6.jpg" alt="Hamburguesa con papas">
+
+                <button class="carousel-nav carousel-next"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="carousel-dots"></div>
+
+                <div class="carousel-data" style="display:none;">
+                    <div data-src="menu1.jpg" data-label=""></div>
+                    <div data-src="menu2.jpg" data-label=""></div>
+                    <div data-src="menu3.jpg" data-label=""></div>
+                    <div data-src="reemplazarmenu.jpg" data-label=""></div>
+                    <div data-src="menu5.jpg" data-label=""></div>
+                    <div data-src="menu6.jpg" data-label=""></div>
                 </div>
             </div>
         </div>
@@ -206,18 +250,32 @@
                 <span class="section-subtitle">Momentos</span>
                 <h2 class="section-title">Nuestra Panadería</h2>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="galeria1.jpg" alt="Vitrina de facturas y dulces">
+
+            <div class="generic-carousel" data-aos="fade-up" id="gallery-carousel">
+                <button class="carousel-nav carousel-prev"><i class="fas fa-chevron-left"></i></button>
+
+                <div class="carousel-container">
+                    <div class="carousel-slide carousel-prev-slide">
+                        <img src="" alt="Anterior">
+                    </div>
+                    <div class="carousel-slide carousel-main-slide">
+                        <img src="" alt="Principal">
+                        <div class="carousel-label"><span></span></div>
+                    </div>
+                    <div class="carousel-slide carousel-next-slide">
+                        <img src="" alt="Siguiente">
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="galeria2.jpg" alt="Cliente en la ventana">
-                </div>
-                <div class="gallery-item">
-                    <img src="galeria3.jpg" alt="Postres y flanes">
-                </div>
-                <div class="gallery-item">
-                    <img src="galeria4.jpg" alt="Cliente con perro">
+
+                <button class="carousel-nav carousel-next"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="carousel-dots"></div>
+
+                <div class="carousel-data" style="display:none;">
+                    <div data-src="galeria1.jpg" data-label=""></div>
+                    <div data-src="galeria2.jpg" data-label=""></div>
+                    <div data-src="galeria3.jpg" data-label=""></div>
+                    <div data-src="galeria4.jpg" data-label=""></div>
                 </div>
             </div>
         </div>
@@ -312,9 +370,6 @@
                     <div class="social-links">
                         <a href="https://www.instagram.com/juanes.uy" target="_blank" class="social-icon">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://facebook.com/juanes.uy" target="_blank" class="social-icon">
-                            <i class="fab fa-facebook"></i>
                         </a>
                         <a href="https://wa.me/59891505818" target="_blank" class="social-icon">
                             <i class="fab fa-whatsapp"></i>

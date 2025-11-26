@@ -301,9 +301,9 @@ body {
 }
 
 .hero-title {
-    font-size: var(--text-base);
+    font-family: 'Montserrat', sans-serif;
     font-size: 7rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -2px;
     line-height: 1.1;
@@ -317,7 +317,7 @@ body {
     font-family: var(--font-secondary);
     margin-bottom: 3rem;
     color: var(--color-text);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.8;
 }
 

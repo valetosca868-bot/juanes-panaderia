@@ -291,3 +291,270 @@ document.querySelectorAll('.producto-slider').forEach(slider => {
         });
     }
 });
+
+// CARRUSEL DE GALLETA DE CAMPAÑA
+(function() {
+    const carousel = document.querySelector('.galleta-carousel');
+    if (!carousel) return;
+
+    const dataItems = carousel.querySelectorAll('.carousel-data > div');
+    const prevSlide = carousel.querySelector('.carousel-prev-slide img');
+    const mainSlide = carousel.querySelector('.carousel-main-slide img');
+    const nextSlide = carousel.querySelector('.carousel-next-slide img');
+    const mainLabel = carousel.querySelector('.carousel-label span');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    const prevSlideContainer = carousel.querySelector('.carousel-prev-slide');
+    const nextSlideContainer = carousel.querySelector('.carousel-next-slide');
+
+    // Extraer datos de las imágenes
+    const images = Array.from(dataItems).map(item => ({
+        src: item.dataset.src,
+        label: item.dataset.label
+    }));
+
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    // Crear dots
+    images.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    // Función para obtener índice anterior
+    function getPrevIndex(idx) {
+        return (idx - 1 + images.length) % images.length;
+    }
+
+    // Función para obtener índice siguiente
+    function getNextIndex(idx) {
+        return (idx + 1) % images.length;
+    }
+
+    // Actualizar carrusel
+    function updateCarousel(direction = 'none') {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const prevIdx = getPrevIndex(currentIndex);
+        const nextIdx = getNextIndex(currentIndex);
+
+        // Actualizar imágenes
+        prevSlide.src = images[prevIdx].src;
+        mainSlide.src = images[currentIndex].src;
+        nextSlide.src = images[nextIdx].src;
+        mainLabel.textContent = images[currentIndex].label;
+
+        // Actualizar dots
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+
+    // Ir a slide específico
+    function goToSlide(index) {
+        if (isAnimating || index === currentIndex) return;
+        const direction = index > currentIndex ? 'next' : 'prev';
+        currentIndex = index;
+        updateCarousel(direction);
+    }
+
+    // Navegación
+    function navigate(direction) {
+        if (isAnimating) return;
+        if (direction === 'next') {
+            currentIndex = getNextIndex(currentIndex);
+        } else {
+            currentIndex = getPrevIndex(currentIndex);
+        }
+        updateCarousel(direction);
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', () => navigate('prev'));
+    nextBtn.addEventListener('click', () => navigate('next'));
+
+    // Click en miniaturas
+    prevSlideContainer.addEventListener('click', () => navigate('prev'));
+    nextSlideContainer.addEventListener('click', () => navigate('next'));
+
+    // Click en imagen principal abre lightbox
+    carousel.querySelector('.carousel-main-slide').addEventListener('click', () => {
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = images[currentIndex].src;
+            if (lightboxCurrent) lightboxCurrent.textContent = currentIndex + 1;
+            if (lightboxTotal) lightboxTotal.textContent = images.length;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    // Soporte para teclado
+    document.addEventListener('keydown', (e) => {
+        const carouselInView = carousel.getBoundingClientRect().top < window.innerHeight &&
+                               carousel.getBoundingClientRect().bottom > 0;
+        if (!carouselInView || lightbox?.classList.contains('active')) return;
+
+        if (e.key === 'ArrowLeft') navigate('prev');
+        if (e.key === 'ArrowRight') navigate('next');
+    });
+
+    // Soporte para swipe en móvil
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                navigate('next');
+            } else {
+                navigate('prev');
+            }
+        }
+    }, { passive: true });
+
+    // Auto-play opcional (desactivado por defecto)
+    // setInterval(() => navigate('next'), 5000);
+
+    // Inicializar
+    updateCarousel();
+
+    console.log('%c✓ Carrusel de galleta inicializado', 'color: #4CAF50;');
+})();
+
+// CARRUSELES GENÉRICOS (Menús Diarios y Galería)
+(function() {
+    const genericCarousels = document.querySelectorAll('.generic-carousel');
+
+    genericCarousels.forEach(carousel => {
+        const dataItems = carousel.querySelectorAll('.carousel-data > div');
+        if (dataItems.length === 0) return;
+
+        const prevSlide = carousel.querySelector('.carousel-prev-slide img');
+        const mainSlide = carousel.querySelector('.carousel-main-slide img');
+        const nextSlide = carousel.querySelector('.carousel-next-slide img');
+        const mainLabel = carousel.querySelector('.carousel-label span');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        const dotsContainer = carousel.querySelector('.carousel-dots');
+        const prevSlideContainer = carousel.querySelector('.carousel-prev-slide');
+        const nextSlideContainer = carousel.querySelector('.carousel-next-slide');
+
+        // Extraer datos de las imágenes
+        const images = Array.from(dataItems).map(item => ({
+            src: item.dataset.src,
+            label: item.dataset.label
+        }));
+
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        // Crear dots
+        images.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+        function getPrevIndex(idx) {
+            return (idx - 1 + images.length) % images.length;
+        }
+
+        function getNextIndex(idx) {
+            return (idx + 1) % images.length;
+        }
+
+        function updateCarousel() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const prevIdx = getPrevIndex(currentIndex);
+            const nextIdx = getNextIndex(currentIndex);
+
+            prevSlide.src = images[prevIdx].src;
+            mainSlide.src = images[currentIndex].src;
+            nextSlide.src = images[nextIdx].src;
+
+            // Mostrar/ocultar etiqueta según si tiene texto
+            const labelText = images[currentIndex].label;
+            mainLabel.textContent = labelText;
+            mainLabel.parentElement.style.display = labelText ? 'block' : 'none';
+
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+
+        function goToSlide(index) {
+            if (isAnimating || index === currentIndex) return;
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function navigate(direction) {
+            if (isAnimating) return;
+            if (direction === 'next') {
+                currentIndex = getNextIndex(currentIndex);
+            } else {
+                currentIndex = getPrevIndex(currentIndex);
+            }
+            updateCarousel();
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => navigate('prev'));
+        nextBtn.addEventListener('click', () => navigate('next'));
+        prevSlideContainer.addEventListener('click', () => navigate('prev'));
+        nextSlideContainer.addEventListener('click', () => navigate('next'));
+
+        // Soporte para swipe en móvil
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    navigate('next');
+                } else {
+                    navigate('prev');
+                }
+            }
+        }, { passive: true });
+
+        // Inicializar
+        updateCarousel();
+    });
+
+    if (genericCarousels.length > 0) {
+        console.log('%c✓ Carruseles genéricos inicializados (' + genericCarousels.length + ')', 'color: #4CAF50;');
+    }
+})();
