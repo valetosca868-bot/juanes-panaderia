@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Página Principal -->
+  <url>
+    <loc>https://juanes.uy/</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Imágenes principales para SEO de imágenes -->
+    <image:image>
+      <image:loc>https://juanes.uy/logo_transparente.png</image:loc>
+      <image:title>Logo Panadería Juanes</image:title>
+      <image:caption>Panadería Juanes - Panadería artesanal en Montevideo, Uruguay</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://juanes.uy/hero-galletas.jpg</image:loc>
+      <image:title>Galletas de Campaña Artesanales</image:title>
+      <image:caption>Las mejores galletas de campaña de Uruguay - Panadería Juanes</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://juanes.uy/galleta/galleta%20de%20campa%C3%B1a%201.jpg</image:loc>
+      <image:title>Galleta de Campaña Uruguaya</image:title>
+      <image:caption>Galleta de campaña artesanal horneada diariamente</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://juanes.uy/galleta/galleta%20de%20campa%C3%B1a%202.jpg</image:loc>
+      <image:title>Galleta de Campaña Recién Horneada</image:title>
+      <image:caption>Galleta de campaña tradicional uruguaya</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://juanes.uy/galeria1.jpg</image:loc>
+      <image:title>Panadería Juanes Montevideo</image:title>
+      <image:caption>Interior de la panadería artesanal Juanes</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://juanes.uy/quienes%20somos1.jpg</image:loc>
+      <image:title>Equipo Panadería Juanes</image:title>
+      <image:caption>El equipo de panaderos artesanales de Juanes</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Sección Productos -->
+  <url>
+    <loc>https://juanes.uy/#productos</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección Nosotros -->
+  <url>
+    <loc>https://juanes.uy/#nosotros</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección Ubicación -->
+  <url>
+    <loc>https://juanes.uy/#ubicacion</loc>
+    <lastmod>2024-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
