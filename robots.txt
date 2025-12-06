@@ -1,12 +1,8 @@
-# Robots.txt para Panadería Juanes
-# https://juanes.uy
+# Robots.txt para Panaderia Juanes
+# https://www.juanes.uy
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://juanes.uy/sitemap.xml
-
-# Archivos que no necesitan indexarse
-Disallow: /*.css$
-Disallow: /*.js$
+Sitemap: https://www.juanes.uy/sitemap.xml
